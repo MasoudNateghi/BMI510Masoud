@@ -13,7 +13,8 @@ logLikBernoulli(data)
 The value of p that maximizes the log-likelihood
 }
 \description{
-Calculate maximum likelihood estimate of p for Bernoulli data
+This function calculates the maximum likelihood estimate of the parameter p
+for Bernoulli data, which is represented as a vector of 0s and 1s.
 }
 \examples{
 # logLikBernoulli(c(1,0,0,0,1,1,1))

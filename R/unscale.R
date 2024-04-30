@@ -1,7 +1,10 @@
 #' Reverse scaling and centering of a vector
 #'
-#' @param x A vector that has been scaled and centered
+#' This function reverses the scaling and centering operation performed on a vector using the scale() function in R.
+#'
+#' @param x A vector that has been scaled and centered using the scale() function
 #' @return The original vector before scaling and centering
+#'
 #' @examples
 #' x = scale(1:10)
 #' unscale(x)

@@ -2,18 +2,18 @@
 #'
 #' @param data A tibble
 #' @return The input tibble with variable names in "small_camel" case
-#' @import dplyr janitor snakecase
+#' @import dplyr
+#' @import janitor
+#' @import snakecase
 #' @examples
 #' data = tibble(MyVar = 1:5, 'Another Var' = 6:10)
 #' standardizeNames(data)
 #'
 #' @export
-standardizeNames = function(data) {
-  library(dplyr)
-  library(janitor)
-  library(snakecase)
-  library(tibble)
-
-  data = rename_with(data, ~ to_snake_case(make_clean_names(.)), everything())
+standardizeNames <- function(data) {
+  data <- dplyr::rename_with(data, ~ snakecase::to_snake_case(.x), everything())
+  data <- dplyr::mutate_all(data, ~ janitor::make_clean_names(.))
   return(data)
 }
+
+

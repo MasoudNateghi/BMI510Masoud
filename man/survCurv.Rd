@@ -7,9 +7,9 @@
 survCurv(status, time)
 }
 \arguments{
-\item{status}{A vector indicating the status (1 for event, 0 for censored).}
+\item{status}{A vector indicating the status of each individual (1 for event occurrence, 0 for censoring).}
 
-\item{time}{A vector of time points.}
+\item{time}{A vector of time points corresponding to each individual's event or censoring time.}
 }
 \value{
 None (plot is generated).
@@ -18,8 +18,7 @@ None (plot is generated).
 This function plots the survival curve based on the input status and time data.
 }
 \examples{
-status = c(1, 1, 0, 1, 0)
-time = c(10, 15, 20, 25, 30)
-survCurv(status, time)
+data = read.csv("https://jlucasmckay.bmi.emory.edu/global/bmi510/Labs-Materials/survival.csv")
+survCurv(data$status, data$time)
 
 }

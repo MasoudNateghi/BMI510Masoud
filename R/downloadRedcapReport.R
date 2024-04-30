@@ -6,15 +6,13 @@
 #' @return A tibble containing the REDCap report data
 #' @import httr
 #' @examples
-#' redcapTokenName = "REDCAP_TOKEN"
-#' redcapUrl = "https://redcap.emory.edu/api/"
-#' redcapReportId = "46524"
-#' report_data = downloadRedcapReport(redcapTokenName, redcapUrl, redcapReportId)
-#' }
+#' redcapTokenName <- "TOKEN"
+#' redcapUrl <- "https://redcap.emory.edu/api/"
+#' redcapReportId <- "46524"
+#' report_data <- downloadRedcapReport(redcapTokenName, redcapUrl, redcapReportId)
 #'
 #' @export
 downloadRedcapReport = function(redcapTokenName, redcapUrl, redcapReportId) {
-  library(httr)
   token = Sys.getenv(redcapTokenName)
   formData = list(
     "token" = token,
@@ -27,8 +25,8 @@ downloadRedcapReport = function(redcapTokenName, redcapUrl, redcapReportId) {
     exportCheckboxLabel = 'false',
     returnFormat = 'csv'
   )
-  response = POST(redcapUrl, body = formData, encode = "form")
-  result = content(response, as = "text", encoding = "UTF-8")
+  response = httr::POST(redcapUrl, body = formData, encode = "form")
+  result = httr::content(response, as = "text", encoding = "UTF-8")
   result_tbl = read.csv(text = result, stringsAsFactors = FALSE)
   return(result_tbl)
 }

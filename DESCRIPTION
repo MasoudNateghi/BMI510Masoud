@@ -1,11 +1,12 @@
 Package: BMI510MasoudNateghi
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Final Package for BMI510
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Masoud Nateghi
+Maintainer: Masoud Nateghi <masoud.nateghi@emory.edu>
+Description: Final Poject for BMI 510 at Emory University. 
+Imports: 
+  magrittr
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true

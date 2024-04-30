@@ -7,13 +7,13 @@
 unscale(x)
 }
 \arguments{
-\item{x}{A vector that has been scaled and centered}
+\item{x}{A vector that has been scaled and centered using the scale() function}
 }
 \value{
 The original vector before scaling and centering
 }
 \description{
-Reverse scaling and centering of a vector
+This function reverses the scaling and centering operation performed on a vector using the scale() function in R.
 }
 \examples{
 x = scale(1:10)

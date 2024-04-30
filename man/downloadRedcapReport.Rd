@@ -19,3 +19,10 @@ A tibble containing the REDCap report data
 \description{
 Download a REDCap report as a tibble
 }
+\examples{
+redcapTokenName <- "TOKEN"
+redcapUrl <- "https://redcap.emory.edu/api/"
+redcapReportId <- "46524"
+report_data <- downloadRedcapReport(redcapTokenName, redcapUrl, redcapReportId)
+
+}
